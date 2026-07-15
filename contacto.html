@@ -1,0 +1,102 @@
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="text-center">Contacto - Solicitar Servicio</h2>
+                    <p class="text-center text-muted mb-4">
+                        Completa el siguiente formulario para agendar tu mantenimiento o reparación.
+                        Nos pondremos en contacto contigo a la brevedad para confirmar la hora.
+                    </p>
+
+                    <form action="#" method="POST">
+
+                        <!-- datos del cliente -->
+                        <h5 class="text-primary fw-bold mb-3">Datos de Contacto</h5>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                    placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono / WhatsApp</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono"
+                                    placeholder="+595 984 123456" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="nombre@ejemplo.com" required>
+                            </div>
+                        </div>
+
+                        <!-- datos del vehiculo -->
+                        <h5 class="text-primary fw-bold mb-3 mt-4">Datos del Vehículo</h5>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label for="marca" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="marca" name="marca" placeholder="Ej. Toyota"
+                                    required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="modelo" class="form-label">Modelo</label>
+                                <input type="text" class="form-control" id="modelo" name="modelo"
+                                    placeholder="Ej. Yaris" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="anio" class="form-label">Año</label>
+                                <input type="number" class="form-control" id="anio" name="anio" placeholder="2020"
+                                    min="1990" max="2026" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="matricula" class="form-label">Matrícula</label>
+                                <input type="text" class="form-control text-uppercase" id="matricula" name="matricula"
+                                    placeholder="ABCD-123" style="text-transform: uppercase;">
+                            </div>
+                        </div>
+
+                        <!-- detalles del servicio -->
+                        <h5 class="text-primary fw-bold mb-3 mt-4">Detalles de la Solicitud</h5>
+                        <div class="mb-3">
+                            <label for="tipoServicio" class="form-label">Tipo de Servicio</label>
+                            <select class="form-select" id="tipoServicio" name="tipoServicio" required>
+                                <option value="" selected disabled>Seleccione una opción...</option>
+                                <option value="mantenimiento">Mantenimiento Preventivo / Cambio de Aceite</option>
+                                <option value="frenos">Sistema de Frenos</option>
+                                <option value="motor">Reparación de Motor / Falla Mecánica</option>
+                                <option value="suspension">Suspensión y Dirección</option>
+                                <option value="diagnostico">Diagnóstico General</option>
+                                <option value="consulta">Consulta de Repuestos</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fechaPreferida" class="form-label">Fecha Preferida (Opcional)</label>
+                            <input type="date" class="form-control" id="fechaPreferida" name="fechaPreferida">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="mensaje" class="form-label">Descripción del Problema o Consulta</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                                placeholder="Describa brevemente la falla, ruido o el servicio que necesita..."></textarea>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar Solicitud</button>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <small class="text-muted">Al enviar este formulario, aceptas que nos contactemos para
+                                coordinar la visita.</small>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

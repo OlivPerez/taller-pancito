@@ -1,0 +1,44 @@
+/* fondo */
+body {
+    /*background: url('https://wallpapercave.com/wp/wp1833251.jpg');*/
+    background: linear-gradient(to bottom right, firebrick,forestgreen);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* hace mas pequeña el area de interaccion de los botones */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 2.5rem 2.5rem; /* aumentar tamaño */
+    /* invertir los colores de los iconos de los botones del carousel */
+    filter: invert(1) grayscale(100);
+    /* sombra múltiple para simular borde negro */
+    filter: drop-shadow(0px 0px 0px #000) drop-shadow(1px 0px 0px #000) drop-shadow(-1px 0px 0px #000) drop-shadow(0px 1px 0px #000) drop-shadow(0px -1px 0px #000);
+}
+
+/* cambia la posicion del caption del carousel */
+.carousel-caption {
+    left: 13%;          /* alinea el borde izquierdo */
+    right: auto;        /* elimina la restricción derecha para evitar el centrado */
+    text-align: left;   /* Alinea el texto a la izquierda */
+    
+}
+
+/* cambia el estilo del texto para que tenga un borde oscuro */
+.carousel-caption h3 {
+    color: white;
+    /* text-shadow: offset-x offset-y blur-radius color; */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}   
