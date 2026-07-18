@@ -1,13 +1,75 @@
 /* fondo */
 body {
     /*background: url('https://wallpapercave.com/wp/wp1833251.jpg');*/
-    background: linear-gradient(to bottom right, firebrick,forestgreen);
+    background: linear-gradient(to bottom right, firebrick, forestgreen);
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
+/* ESTILOS DE LOS HEXAGONOS DEL INICIO */
+
+/* contenedor principal en cuadricula */
+.hexagon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas iguales */
+    gap: 3%;
+    /* espacio entre los hexágonos */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 0px 80px;
+}
+
+/* estilo base de cada hexagono */
+.hexagon-item {
+    position: relative;
+    width: 100%;
+    padding-top: 115%;
+    overflow: hidden;
+    /* Recorta cualquier elemento en forma de hexágono vertical */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.3s ease;
+}
+
+/* efecto visual al pasar el mouse */
+.hexagon-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* ajuste de la imagen interna */
+.hexagon-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* alineacion escalada */
+/* El 1 y 3 se alinean arriba por defecto */
+/* El 2 y 4 se desplazan hacia abajo */
+.hexagon-grid .hexagon-item:nth-child(2),
+.hexagon-grid .hexagon-item:nth-child(4) {
+    transform: translateY(80px);
+    /* empuja hacia abajo */
+}
+
+/* hover para los hexagonos desplazados */
+.hexagon-grid .hexagon-item:nth-child(2):hover,
+.hexagon-grid .hexagon-item:nth-child(4):hover {
+    transform: translateY(80px) scale(1.05);
+}
+
+/* FIN ESTILOS DE LOS HEXAGONOS DEL INICIO */
+
+
+/* ESTILOS DEl CAROUSEL EN OFERTAS */
 
 /* hace mas pequeña el area de interaccion de los botones */
 .carousel-control-prev,
@@ -17,7 +79,8 @@ body {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-size: 2.5rem 2.5rem; /* aumentar tamaño */
+    background-size: 2.5rem 2.5rem;
+    /* aumentar tamaño */
     /* invertir los colores de los iconos de los botones del carousel */
     filter: invert(1) grayscale(100);
     /* sombra múltiple para simular borde negro */
@@ -26,19 +89,42 @@ body {
 
 /* cambia la posicion del caption del carousel */
 .carousel-caption {
-    left: 13%;          /* alinea el borde izquierdo */
-    right: auto;        /* elimina la restricción derecha para evitar el centrado */
-    text-align: left;   /* Alinea el texto a la izquierda */
-    
+    left: 13%;
+    /* alinea el borde izquierdo */
+    right: auto;
+    /* elimina la restricción derecha para evitar el centrado */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+
 }
 
 /* cambia el estilo del texto para que tenga un borde oscuro */
 .carousel-caption h3 {
     color: white;
     /* text-shadow: offset-x offset-y blur-radius color; */
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-}   
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+/* FIN ESTILOS DEl CAROUSEL EN OFERTAS */
+
+
+
+/* imagenes de las tarjetas de las secciones inferiores en ofertas */
+.card-img{
+    width: 190px; 
+    height: 150px;
+    clip-path: rect(0px 190px 150px 0px);
+}
+
+.img-oferta{
+    width: 100%;
+    height: 400px;;
+}
+.img-oferta-sm{
+    width: 100%;
+    height: 120px;;
+}

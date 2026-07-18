@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portada con Hexágonos</title>
+  <!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
+  <style>
+    /* Contenedor principal en cuadrícula */
+    .hexagon-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+      gap: 20px; /* Espacio entre los hexágonos */
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    /* Estilo base de cada hexágono */
+    .hexagon-item {
+      position: relative;
+      width: 100%;
+      padding-top: 115%; /* Mantiene la proporción del hexágono */
+      overflow: hidden;
+      /* Recorta cualquier elemento en forma de hexágono vertical */
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: transform 0.3s ease;
+    }
+
+    /* Efecto visual al pasar el mouse */
+    .hexagon-item:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    /* Ajuste de la imagen interna */
+    .hexagon-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Evita que la imagen se deforme */
+    }
+
+    /* ALINEACIÓN INTERCALADA (Efecto arriba/abajo) */
+    /* El 1º y 3º se alinean arriba (por defecto) */
+    
+    /* El 2º y 4º se desplazan hacia abajo */
+    .hexagon-grid .hexagon-item:nth-child(2),
+    .hexagon-grid .hexagon-item:nth-child(4) {
+      transform: translateY(50px); /* Empuja el hexágono hacia abajo */
+    }
+
+    /* Corrección del hover para los hexágonos desplazados */
+    .hexagon-grid .hexagon-item:nth-child(2):hover,
+    .hexagon-grid .hexagon-item:nth-child(4):hover {
+      transform: translateY(50px) scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <header class="container text-center my-5">
+    <h1 class="display-4 fw-bold text-dark">Mi Portada Creativa</h1>
+    <p class="lead text-muted">Diseño geométrico adaptado con Bootstrap y CSS Grid</p>
+  </header>
+
+  <main class="container">
+    <!-- Grid de Hexágonos -->
+    <div class="hexagon-grid">
+      
+      <!-- Hexágono 1 (Arriba) -->
+      <div class="hexagon-item">
+        <img src="https://placehold.co/400x300" alt="Imagen 1">
+      </div>
+
+      <!-- Hexágono 2 (Abajo) -->
+      <div class="hexagon-item">
+        <img src="https://placehold.co/400x300" alt="Imagen 2">
+      </div>
+
+      <!-- Hexágono 3 (Arriba) -->
+      <div class="hexagon-item">
+        <img src="https://placehold.co/400x300" alt="Imagen 3">
+      </div>
+
+      <!-- Hexágono 4 (Abajo) -->
+      <div class="hexagon-item">
+        <img src="https://placehold.co/400x300" alt="Imagen 4">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+<!--script de javascript de bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
